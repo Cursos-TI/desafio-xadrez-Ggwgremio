@@ -1,11 +1,8 @@
 #include <stdio.h>
 
-// Desafio de Xadrez - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
-// O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
-
 int main() {
     int bispo = 1, rainha = 1, torre = 1; //peças a serem usadas no jogo.
+    int a , b;
 
     printf("Bispo\n");
     while (bispo <= 5)
@@ -26,8 +23,29 @@ int main() {
         rainha++;
     }
     // Nível Aventureiro - Movimentação do Cavalo
-    // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
-    // Um loop pode representar a movimentação horizontal e outro vertical.
+    printf("\nCavalo\n");
+    for (a = 1; a <= 1 ; a++) //feito com for
+    {
+        printf("baixo %d\n", a); //direção e casas que o cavalo ira andar
+        for (b = 1; b <= 3; b++)
+        {
+             printf("esquerda %d\n", b);
+        }
+        
+    }
+    
+    printf("\nCavalo\n");
+    int c = 1;
+    while (c <= 1) { //feito com while
+        int d = 1;
+            printf("baixo %d\n", c); //direção e casas que o cavalo ira andar
+            while (d <= 3) {
+            printf("esquerda %d\n", d);
+            d++;
+        }
+        printf("\n");
+        c++;
+    }
 
     // Nível Mestre - Funções Recursivas e Loops Aninhados
     // Sugestão: Substitua as movimentações das peças por funções recursivas.
