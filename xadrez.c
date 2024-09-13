@@ -1,58 +1,49 @@
 #include <stdio.h>
 
+void Rainha(int numero){
+    if (numero <= 8){
+        printf("esquerda %d \n", numero);
+
+        Rainha(numero + 1);
+    }
+}
+
+void Torre(int casa){
+    if (casa <= 5){
+        printf("direita %d \n", casa);
+
+        Torre(casa + 1);
+    }
+}
+
 int main() {
-    int bispo = 1, rainha = 1, torre = 1; //peças a serem usadas no jogo.
+    int rainha = 1, bispox = 1, bispoy = 1, torre = 1;
     int a , b;
 
     printf("Bispo\n");
-    while (bispo <= 5)
+    while (bispox <= 1)
     {
-        printf("direita, cima %d\n", bispo); //direção e casas que o bispo ira andar.
-        bispo++;
-    }
-    printf("\nTorre\n");
-    while (torre <= 5)
+        while (bispoy <= 5)
     {
-        printf("direita %d\n", torre); //direção e casas que a torre ira andar.
-        torre++;
-    }
-    printf("\nRainha\n");
-    while (rainha <= 8)
-    {
-        printf("esquerda %d\n", rainha); //direção e casas que a rainha ira andar.
-        rainha++;
-    }
-    // Nível Aventureiro - Movimentação do Cavalo
-    printf("\nCavalo\n");
-    for (a = 1; a <= 1 ; a++) //feito com for
-    {
-        printf("baixo %d\n", a); //direção e casas que o cavalo ira andar
-        for (b = 1; b <= 3; b++)
-        {
-             printf("esquerda %d\n", b);
-        }
-        
+            printf("direita %d, cima %d\n", bispox, bispoy);
+            bispoy++;
+            bispox++;
+
     }
     
-    printf("\nCavalo\n");
-    int c = 1;
-    while (c <= 1) { //feito com while
-        int d = 1;
-            printf("baixo %d\n", c); //direção e casas que o cavalo ira andar
-            while (d <= 3) {
-            printf("esquerda %d\n", d);
-            d++;
-        }
-        printf("\n");
-        c++;
     }
+   
+    printf("\nTorre\n");
+        Torre(torre);
 
-    // Nível Mestre - Funções Recursivas e Loops Aninhados
-    // Sugestão: Substitua as movimentações das peças por funções recursivas.
-    // Exemplo: Crie uma função recursiva para o movimento do Bispo.
+    printf("\nRainha\n");
+        Rainha(rainha);
 
-    // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
-    // Inclua o uso de continue e break dentro dos loops.
+    printf("\nCavalo\n");
+
+    for (a = 1, b = 1; a <= 1 && b <= 3; a++, b++){
+        printf("cima %d, direita %d, direita %d, direita %d\n", a, b, b+1, b+2);
+    }
 
     return 0;
 }
